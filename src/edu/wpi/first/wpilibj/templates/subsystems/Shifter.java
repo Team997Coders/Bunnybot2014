@@ -5,9 +5,9 @@
  */
 package edu.wpi.first.wpilibj.templates.subsystems;
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.RobotMap;
 
 /**
  *
@@ -19,10 +19,12 @@ public class Shifter extends Subsystem {
 
     DoubleSolenoid gearSolenoid; 
     DoubleSolenoid omniOrTraction;
+    Compressor compressor;
     
-    public Shifter(int gearShiftSlot1, int gearShiftSlot2, int driveShiftSlot1, int driveShiftSlot2) {
+    public Shifter(int gearShiftSlot1, int gearShiftSlot2, int driveShiftSlot1, int driveShiftSlot2, int CompressorSlot, int pressureSwitchSlot) {
        gearSolenoid = new DoubleSolenoid(gearShiftSlot1, gearShiftSlot2);
        omniOrTraction =  new DoubleSolenoid(driveShiftSlot1, driveShiftSlot2);
+     //  compressor = new Compressor(pressureSwitchSlot, CompressorSlot);
     }
     
     public void initDefaultCommand() {
@@ -48,5 +50,9 @@ public class Shifter extends Subsystem {
 
     public boolean getIsOmni() {
         return omniOrTraction.get().value == DoubleSolenoid.Value.kForward_val;
+    }
+    
+    public void SmartDashboard() {
+        
     }
 }
