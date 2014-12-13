@@ -42,12 +42,12 @@ public class OI {
     }
 
     //BOOTONS!!!!!!
-    int arcadeDrive = 2;
+    int arcadeDrive = 3;
     int tankDrive = 4;
-    int shiftDriveTraction = 3;
-    int shiftGearHi = 5;
-    int shiftDriveOmni = 3;
-    int shiftGearLow = 5;
+    int shiftDriveTraction = 5;
+    int shiftGearHi = 1;
+    int shiftDriveOmni = 6;
+    int shiftGearLow = 2;
     Button arcadeButt = new JoystickButton(gamepad, arcadeDrive);
     Button tankButt = new JoystickButton(gamepad, tankDrive);
     Button shiftTractionButt = new JoystickButton(gamepad, shiftDriveTraction);
