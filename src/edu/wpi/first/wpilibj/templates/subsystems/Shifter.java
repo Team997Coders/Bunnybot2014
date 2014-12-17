@@ -25,7 +25,10 @@ public class Shifter extends Subsystem {
     public Shifter(int gearShiftSlot1, int gearShiftSlot2, int driveShiftSlot1, int driveShiftSlot2, int CompressorSlot, int pressureSwitchSlot) {
        gearSolenoid = new DoubleSolenoid(gearShiftSlot1, gearShiftSlot2);
        omniOrTraction =  new DoubleSolenoid(driveShiftSlot1, driveShiftSlot2);
-     //  compressor = new Compressor(pressureSwitchSlot, CompressorSlot);
+       compressor = new Compressor(pressureSwitchSlot, CompressorSlot);
+       setOmni();
+       setLowGear();
+       compressor.start();
     }
     
     public void initDefaultCommand() {
@@ -59,7 +62,9 @@ public class Shifter extends Subsystem {
     public void SmartDashboard() {
         SmartDashboard.putBoolean("is in high gear", getIsHigh());
         SmartDashboard.putBoolean("is omni", getIsOmni());
+        SmartDashboard.putBoolean("Compressor Switch full", compressor.getPressureSwitchValue());
         SmartDashboard.putData(this);
+        
     }
 
    

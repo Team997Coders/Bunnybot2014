@@ -24,7 +24,7 @@ public class ShiftDriveTrain extends CommandBase {
     public ShiftDriveTrain(boolean isOmni) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(subDriveTrain);
+        requires(subShifter);
         this.isOmni = isOmni;
     }
 

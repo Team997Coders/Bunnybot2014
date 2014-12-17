@@ -21,7 +21,7 @@ public class ShiftGear extends CommandBase {
     public ShiftGear(boolean isHigh) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(subDriveTrain);
+        requires(subShifter);
         this.isHigh = isHigh;
     }
 

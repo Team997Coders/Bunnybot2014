@@ -37,7 +37,7 @@ public class OI {
     }
 
   private double deadband(double value){
-      if (Math.abs(value)<.05){
+      if (Math.abs(value)<.06){
           return 0;
       }
       return value;
@@ -59,7 +59,7 @@ SmartDashboard.putNumber("twist", deadband(gamepad.getRawAxis(4)));
     }
 
     public double getRightSpeed() {
-        return deadband(gamepad.getY(GenericHID.Hand.kRight));
+        return deadband(gamepad.getRawAxis(5));
     }
 
     //BOOTONS!!!!!!

@@ -48,7 +48,8 @@ public class DriveTrain extends Subsystem {
     }
     
     public void SmartDashboard() {
-        
+        SmartDashboard.putData(this);
+               
     }
     
     
