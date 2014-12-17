@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.templates.commands.ArcadeDrive;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
@@ -23,7 +24,7 @@ import edu.wpi.first.wpilibj.templates.commands.CommandBase;
  */
 public class RobotTemplate extends IterativeRobot {
 
-    Command autonomousCommand;
+    Command autonomousCommand = new ArcadeDrive();
 
     /**
      * This function is run when the robot is first started up and should be
@@ -62,6 +63,7 @@ public class RobotTemplate extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        SmartDashboard();
     }
     
     /**
@@ -69,5 +71,11 @@ public class RobotTemplate extends IterativeRobot {
      */
     public void testPeriodic() {
         LiveWindow.run();
+    }
+
+    private void SmartDashboard() {
+        CommandBase.subDriveTrain.SmartDashboard();
+        CommandBase.subShifter.SmartDashboard();
+       
     }
 }

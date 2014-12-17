@@ -8,6 +8,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -51,8 +52,15 @@ public class Shifter extends Subsystem {
     public boolean getIsOmni() {
         return omniOrTraction.get().value == DoubleSolenoid.Value.kForward_val;
     }
-    
-    public void SmartDashboard() {
-        
+     
+    private boolean getIsHigh() {
+        return gearSolenoid.get().value == DoubleSolenoid.Value.kForward_val;
     }
+    public void SmartDashboard() {
+        SmartDashboard.putBoolean("is in high gear", getIsHigh());
+        SmartDashboard.putBoolean("is omni", getIsOmni());
+        SmartDashboard.putData(this);
+    }
+
+   
 }

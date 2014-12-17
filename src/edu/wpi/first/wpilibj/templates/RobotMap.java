@@ -23,6 +23,7 @@ public class RobotMap extends RobotMapC{
    public static int RightEncoderSlot1 = DigitalIO_3;
    public static int RightEncoderSlot2 = DigitalIO_4;
    public static int StrafeEncoderSlot2 = 1;
+   public static int PressureSwitchSlot = DigitalIO_5;
            
    public static double deadbandVal = .1;
     public static double leftErrorCoeficient;

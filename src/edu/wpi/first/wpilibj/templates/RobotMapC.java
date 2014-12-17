@@ -12,8 +12,6 @@ package edu.wpi.first.wpilibj.templates;
  */
 public class RobotMapC {
     //enables the calling of these variables in RobotMap. 
-    //DONT MESS WITH THIS CLASS.
-    //But do use it
     static final int USB1 = 1;
     static final int USB2 = 2;
     static final int USB3 = 3;

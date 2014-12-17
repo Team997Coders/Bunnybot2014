@@ -21,7 +21,9 @@ public abstract class CommandBase extends Command {
             RobotMap.gearShiftSlot1,
             RobotMap.gearShiftSlot2, 
             RobotMap.driveShiftSlot1,
-            RobotMap.driveShiftSlot2);
+            RobotMap.driveShiftSlot2,
+            RobotMap.Compressor,
+            RobotMap.PressureSwitchSlot);
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
         // will), constructing it during the construction of CommandBase (from
